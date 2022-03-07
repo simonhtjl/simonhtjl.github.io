@@ -4,20 +4,19 @@ let sumOfTax
 function calculateTax(taxYear, name, annualIncome, marriageStatus, dependentChildrenCount) {
 
     if(marriageStatus == "Menikah"){
+
         ptkp = 60000000
 
-        if(dependentChildrenCount != 0){
-            childPtkp = dependentChildrenCount*15000000
-            ptkp += childPtkp
-        }
-    }else if(marriageStatus == "singleParents"){
+        ptkpChildrenCount = dependentChildrenCount*15000000
+        ptkp += childPtkp
+
+    }else if(marriageStatus == "Cerai"){
+        
         ptkp = 70000000
 
-        if(dependentChildrenCount != 0){
-            childPtkp = dependentChildrenCount*15000000
-            ptkp += childPtkp
-        }
-
+        childPtkp = dependentChildrenCount*15000000
+        ptkp += childPtkp
+        
     }
     
     if(annualIncome > 0 & annualIncome <= 200000000){
